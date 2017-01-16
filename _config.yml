@@ -22,3 +22,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+
+collections:
+    - blocks
