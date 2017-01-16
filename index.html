@@ -1,53 +1,87 @@
 ---
 layout: base
 ---
-
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Yourte</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                {% for block in site.blocks %}
-                <li><a href="#{{block.title | slugify}}">{{ block.title }}</a></li>
-                {% endfor %}
-            </ul>
-
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-
-<div class="jumbotron">
-    <div class="container">
-        <h1>Hello World</h1>
-        <p>
-            Excogitatum est super his, ut homines quidam ignoti, vilitate ipsa parum cavendi ad colligendos rumores per Antiochiae latera cuncta destinarentur relaturi quae audirent. hi peragranter et dissimulanter honoratorum circulis adsistendo pervadendoque divites domus egentium habitu quicquid noscere poterant vel audire latenter intromissi per posticas in regiam nuntiabant, id observantes conspiratione concordi, ut fingerent quaedam et cognita duplicarent in peius, laudes vero supprimerent Caesaris, quas invitis conpluribus formido malorum inpendentium exprimebat.
-        </p>
-    </div>
-</div>
-
-<div class="container">
-
-    {% for block in site.blocks %}
-        <div class="page-header" id="{{block.title | slugify}}">
-            <h1>{{ block.title }}</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                {{ block.content }}
+<div class="header">
+    <div class="bg-color">
+        <header id="main-header">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lauraMenu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Ain'stant Yourte</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="lauraMenu">
+                        <ul class="nav navbar-nav navbar-right navbar-border">
+                            <li class="active"><a href="#main-header">Acceuil</a></li>
+                            {% for block in site.blocks %}
+                            <li><a href="#{{block.title | slugify}}">{{ block.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow fadeIn delay-05s">
+                        <div class="banner-text">
+                            <h2>Bienvenue à l'<span>Ain'stant Yourte</span>,</h2>
+                            <p>Un havre de paix <br>dans un écrin de verdure</p>
+                        </div>
+                        <div class="overlay-detail text-center">
+                            <a href="#about"><i class="fa fa-angle-down"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    {% endfor %}
-
-    <footer class="footer">
-        Copyright…
-    </footer>
+    </div>
 </div>
+
+{% for block in site.blocks %}
+<section id="{{block.title | slugify}}" class="section-padding wow {{block.effects}}">
+    <div class="container">
+        <div class="row">
+            {{ block.content }}
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+<footer class="footer-2 text-center-xs bg--white">
+    <div class="container">
+        <!--end row-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="footer">
+                    © Copyright Laura Theme. All Rights Reserved
+                    <div class="credits">
+                        <!-- 
+                            All the links in the footer should remain intact. 
+                            You can delete the links only if you purchased the pro version.
+                            Licensing information: https://bootstrapmade.com/license/
+                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Laura
+                        -->
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-right">
+                <ul class="social-list">
+                    <li>
+                        <a href="https://www.facebook.com/LAinstant-Yourte-237874049980944">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!--end row-->
+    </div>
+</footer>
